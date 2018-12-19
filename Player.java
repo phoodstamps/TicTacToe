@@ -65,5 +65,19 @@ public class Player {
 		}
 		return XorO;
 	}
+	public static char checkPlayerXorO(int playerNum) {
+		char XorO;
+		if (playerNum == 1) {
+			XorO = 'X';
+		}
+		else if (playerNum != 0){
+			XorO = 'O';
+		}
+		else
+		{
+			XorO = ' ';
+		}
+		return XorO;
+	}
 	
 }

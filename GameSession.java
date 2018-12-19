@@ -43,14 +43,16 @@ public class GameSession {
 		player1.showPlayerInfo();
 		player2.showPlayerInfo();
 		
-		//TODO: Display board at the start of each turn
+		while (true) {
+		displayBoard();
 		
 		//TODO: Add user input for players to start adding X or O to the board.
 		
-		//TODO: After each input, check for a winner.
-		checkForWinner();
-		
 		//TODO: If a winner is found, end the game and ask if want to start a new game or quit.
+			if (checkForWinner()) {
+				break;
+			}
+		}
 	}
 	
 	/**
@@ -90,5 +92,31 @@ public class GameSession {
 			winner = true;
 		}
 		return winner;
+	}
+	
+	/**
+	 * Displays the Tic-Tac-Toe board with X and Os marked
+	 */
+	private void displayBoard() {
+		//uncomment for testing marked spots on the board and for winner
+		/**gameBoard[0][0] = 1;
+		gameBoard[2][0] = 2;
+		gameBoard[1][1] = 1;
+		gameBoard[0][2] = 2;
+		gameBoard[2][2] = 1;
+		*/
+		
+		//Each section is 5x3
+		System.out.println("     |     |     ");
+		System.out.println("  " + Player.checkPlayerXorO(gameBoard[0][0]) + "  |  " + Player.checkPlayerXorO(gameBoard[1][0]) + "  |  " + Player.checkPlayerXorO(gameBoard[2][0]) + "  ");
+		System.out.println("     |     |     ");
+		System.out.println("-----------------");
+		System.out.println("     |     |     ");
+		System.out.println("  " + Player.checkPlayerXorO(gameBoard[0][1]) + "  |  " + Player.checkPlayerXorO(gameBoard[1][1]) + "  |  " + Player.checkPlayerXorO(gameBoard[2][1]) + "  ");
+		System.out.println("     |     |     ");
+		System.out.println("-----------------");
+		System.out.println("     |     |     ");
+		System.out.println("  " + Player.checkPlayerXorO(gameBoard[0][2]) + "  |  " + Player.checkPlayerXorO(gameBoard[1][2]) + "  |  " + Player.checkPlayerXorO(gameBoard[2][2]) + "  ");
+		System.out.println("     |     |     ");
 	}
 }
