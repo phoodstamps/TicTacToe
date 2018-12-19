@@ -6,7 +6,11 @@
 //*******************************************************************
 public class GameTester {
 	
-	public static void Main(String[] args) {
+	public static void main(String[] args) {
+		//Player player1 = new Player("Ryan",'X');
+		//Player player2 = new Player("Maggie",'O');
 		
+		GameSession session = new GameSession();
+		session.startSession();
 	}
 }
